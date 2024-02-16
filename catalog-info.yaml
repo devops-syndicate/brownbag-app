@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "brownbag-app"
+  annotations:
+    github.com/project-slug: "devops-syndicate/brownbag-app"
+    argocd/app-name: brownbag-app
+    backstage.io/kubernetes-namespace: brownbag-app
+    backstage.io/kubernetes-id: brownbag-app
+    backstage.io/kubernetes-label-selector: 'app.oam.dev/name=brownbag-app'
+    backstage.io/techdocs-ref: dir:.
+  links:
+  - title: Link to ArgoCD
+    url: http://argo-cd.127.0.0.1.nip.io/applications/brownbag-app
+  tags:
+  - nodejs
+spec:
+  type: service
+  owner: admins
+  lifecycle: production
+  providesApis:
+  - brownbag-app-api

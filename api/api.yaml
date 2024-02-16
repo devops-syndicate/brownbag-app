@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: brownbag-app-api
+  description: API definition of brownbag-app
+spec:
+  type: openapi
+  owner: admins
+  lifecycle: production
+  definition: |
+    openapi: "3.0.0"
+    info:
+      version: 1.0.0
+      title: brownbag-app API
+    
+    paths:
+      /:
+        get:
+          summary: Returns hello
